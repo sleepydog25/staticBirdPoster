@@ -1,0 +1,22 @@
+:root {
+  --color-background: #E4E8D0;
+  --color-mint: #AECDBD;
+  --color-dark-green: #487C2C;
+  --color-medium-green: #4D8659;
+  --color-light-green: #A5CF7B;
+  --color-deep-teal: #006077;
+  --color-title: #263D42;
+  --color-bird-blue: #81ABAB;
+  --color-illustration-blue: #43818E;
+  --color-orange: #F7B760;
+  --color-purple: #6B5478;
+  --color-pink: #DC8883;
+  --color-white: #FFFFFF;
+  /* 取自原稿餵食遊蕩貓狗的棕橘色文字。 */
+  --color-roaming-text: #B65B25;
+  --bird-one-duration: 16s;
+  --bird-two-duration: 23s;
+  --reveal-duration: 780ms;
+  --illustration-duration: 900ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

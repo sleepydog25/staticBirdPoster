@@ -1,0 +1,35 @@
+.reveal { --reveal-x: 0px; --reveal-y: 35px; opacity: 1; transform: none; }
+.reveal-left { --reveal-x: -60px; --reveal-y: 0px; }
+.reveal-right { --reveal-x: 60px; --reveal-y: 0px; }
+.reveal-pending { opacity: 0; transform: translate(var(--reveal-x), var(--reveal-y)) scale(.96); }
+.reveal.is-visible { animation: poster-reveal var(--reveal-duration) var(--reveal-ease) var(--reveal-delay, 0ms) both; }
+.illustration.is-visible { animation-duration: var(--illustration-duration); }
+@keyframes poster-reveal { from { opacity: 0; transform: translate(var(--reveal-x), var(--reveal-y)) scale(.96); } to { opacity: 1; transform: none; } }
+.poster-title { animation: title-reveal 850ms var(--reveal-ease) both; }
+@keyframes title-reveal { from { opacity: 0; transform: translateY(35px) scale(.96); } to { opacity: 1; transform: none; } }
+.swallow-one { animation: fly-one var(--bird-one-duration) ease-in-out infinite; }
+.swallow-two { animation: fly-two var(--bird-two-duration) ease-in-out infinite; }
+/* 飛行限定於文字兩旁與上緣，完整迴圈的首尾座標相同。 */
+@keyframes fly-one {
+  0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+  23% { transform: translate(4vw, -24vw) rotate(7deg) scale(.84); }
+  49% { transform: translate(65vw, -30vw) rotate(12deg) scale(.75); }
+  73% { transform: translate(72vw, -3vw) rotate(-6deg) scale(.95); }
+  86% { transform: translate(35vw, 16vw) rotate(-10deg) scale(.8); }
+}
+@keyframes fly-two {
+  0%, 100% { transform: translate(0, 0) rotate(4deg) scale(.92); }
+  28% { transform: translate(-11vw, -25vw) rotate(-8deg) scale(.8); }
+  52% { transform: translate(55vw, -48vw) rotate(8deg) scale(.95); }
+  75% { transform: translate(80vw, -10vw) rotate(-5deg); }
+  89% { transform: translate(38vw, 10vw) rotate(-10deg) scale(.8); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal, .reveal-pending { opacity: 1 !important; transform: none !important; }
+  .swallow { will-change: auto; }
+}
+@media print {
+  *, *::before, *::after { animation: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

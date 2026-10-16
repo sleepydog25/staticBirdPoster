@@ -1,6 +1,6 @@
 # 城市裡隱形的鳥類殺手
 
-依照 `assest/海報2 1.png` 與使用者提供的 SVG 製作的互動資訊海報。React + Vite + TypeScript；CSS 動畫與 Intersection Observer，沒有 GSAP、後端或 UI 套件。
+依照 `assest/海報2 1.png` 與使用者提供的 SVG 製作的互動資訊海報。React + Vite + TypeScript；原海報使用 CSS 動畫與 Intersection Observer，開場使用 GSAP ScrollTrigger，沒有後端或 UI 套件。
 
 ## 啟動與建置
 
@@ -19,6 +19,12 @@ npm run preview
 ```
 
 輸出在 `dist/`。Vercel、Netlify 的 Build command 設為 `npm run build`，Output directory 設為 `dist`。GitHub Pages 請將 `dist/` 內容透過 Pages Actions 部署；Vite 已設 `base: './'`，支援 repository 子路徑，不需要後端或 SPA rewrite。
+
+## 捲動開場
+
+第一次完成介紹或按「跳過介紹」後，同一 session 的後續造訪直接顯示海報。使用 `?intro=replay` 強制測試開場、`?intro=off` 暫時停用，或按右下角「重播介紹」。減少動態效果偏好優先於重播；帶有 `#traps-title` 等 fragment 的網址直接進入海報。
+
+設定集中在 `src/config/opening.ts`：`enabled`、`oncePerSession`、`scrollScreens`。技術說明、檔案清單與測試步驟見 [OPENING.md](OPENING.md)。執行 `npm run test:e2e` 可驗證捲動、組裝、互動交接、響應式版面與無障礙行為；Windows 使用已安裝的 Edge，其他平台先執行 `npx playwright install chromium`。
 
 ## 修改內容
 
@@ -51,9 +57,9 @@ npm run preview
 完整素材表見 `ASSETS.md`。原始檔保留在 `assest/`，網站檔案在 `public/assets/`。
 
 - 未使用整張海報當背景。
-- `title.svg` 與 `map.svg` 包含輪廓文字，因此不直接顯示，改用 HTML 與簡單裝飾線條；字型使用本機襯線／無襯線 fallback，沒有額外遠端字型請求。標題字形會受裝置已安裝字型影響，並非原稿字形逐筆相同。
+- `title.svg` 在開場組裝時顯示，再淡入原有 HTML 標題；海報仍保留可存取的 HTML 標題。`map.svg` 保持原有 HTML 實作。字型使用本機 fallback，沒有額外遠端字型請求。
 - `leftMiddle.svg` 內嵌一張 PNG，且貓頭鷹面部與海報 PNG 有差異；保留提供的 SVG。平板及手機將它拆為背景與貓頭鷹兩層，原有 path、fill 不變，避免插畫壓字。
-- 未提供老鼠藥與花朵的獨立 SVG，因此從原始海報擷取小型透明 PNG；沒有重新繪製。若需要無限放大，請補上這些向量原稿並在對應元件換檔。
+- 新增的 `poison.svg`、`leftFlower.svg`、`rightFlower.svg` 已取代老鼠藥與兩個主要花朵 PNG，沿用原位置。其餘小花 PNG 保留；原始檔位於 `assest/`，網站使用的相同副本位於 `public/assets/`。
 - `rightMiddle.svg` 的 viewBox 下方有大量留白，容器只裁去留白，不改路徑、不拉伸圖片。背景高度不足時向下延伸相同純色。
 
 ## 驗證

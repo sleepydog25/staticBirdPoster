@@ -1,0 +1,44 @@
+.opening-shell { position: relative; }
+.opening-stage { position: relative; }
+.opening-viewport { position: absolute; inset: 0 0 auto; height: 100vh; height: 100svh; overflow: clip; pointer-events: none; z-index: 5; }
+.opening-traveler { position: absolute; top: 0; left: 0; max-width: none; object-fit: contain; visibility: hidden; pointer-events: none; }
+.opening-traveler[data-traveler="bird1"], .opening-traveler[data-traveler="bird2"] { z-index: 2; }
+.opening-welcome { position: absolute; top: 56%; left: 10%; width: 80%; text-align: center; }
+.opening-eyebrow { font-size: 1rem; letter-spacing: .22em; margin-bottom: 8px; }
+.opening-heading { font-family: 'Noto Serif TC', 'PMingLiU', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: .08em; }
+.opening-instruction { font-size: .95rem; margin-top: 30px; }
+.opening-caption { position: absolute; top: 68%; left: 50%; width: min(33em, 84%); transform: translateX(-50%); font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.8; text-align: center; text-wrap: balance; visibility: hidden; }
+.opening-controls { position: absolute; top: 18px; left: max(18px, env(safe-area-inset-left)); right: max(18px, env(safe-area-inset-right)); z-index: 6; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.opening-controls[hidden], .opening-viewport[hidden] { display: none; }
+.opening-step { font-size: .8rem; letter-spacing: .06em; }
+.opening-skip, .opening-replay { font: inherit; font-size: .85rem; color: var(--color-title); border: 1px solid currentColor; background: var(--color-background); border-radius: 30px; min-height: 44px; padding: 8px 17px; cursor: pointer; }
+.opening-skip:hover, .opening-replay:hover { background: var(--color-white); }
+.opening-skip:focus-visible, .opening-replay:focus-visible { outline: 3px solid var(--color-orange); outline-offset: 4px; }
+.opening-progress { position: absolute; top: -18px; left: -18px; right: -18px; height: 3px; background: var(--color-dark-green); transform-origin: left; }
+.opening-replay { position: fixed; bottom: max(12px, env(safe-area-inset-bottom)); right: max(12px, env(safe-area-inset-right)); z-index: 8; box-shadow: 0 2px 8px #263d4214; }
+.opening-active .opening-replay { display: none; }
+.opening-assembled .opening-viewport { opacity: 0; visibility: hidden; }
+.opening-enabled .poster-title { animation: none; }
+/* Assembly has already revealed this content. Suppress the one-shot reveal
+   while it is being composed; the independent bird animations resume at handoff. */
+.opening-active .reveal, .opening-assembled .reveal { animation: none; opacity: 1; transform: none; }
+.opening-active .swallow { animation: none; }
+.opening-active .poster { pointer-events: none; }
+.opening-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 767px) {
+  .opening-step { font-size: .7rem; max-width: 12em; }
+  .opening-controls { top: 12px; left: 12px; right: 12px; }
+  .opening-welcome { top: 55%; left: 7%; width: 86%; }
+  .opening-caption { top: 66%; width: 82%; font-size: 1.08rem; }
+  .opening-instruction { margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening-viewport, .opening-controls, .opening-replay { display: none; }
+}
+@media print {
+  .opening-viewport, .opening-controls, .opening-replay { display: none !important; }
+  .pin-spacer { height: auto !important; padding: 0 !important; }
+  .opening-stage { position: static !important; transform: none !important; height: auto !important; }
+  .opening-shell .poster { transform: none !important; opacity: 1 !important; }
+  .opening-shell .poster * { visibility: visible !important; }
+}

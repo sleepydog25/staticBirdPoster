@@ -7,7 +7,7 @@ export function HumanInterference() {
     <section className="human-section" aria-labelledby="human-title">
       <ScrollReveal className="human-backdrop illustration" direction="left"><picture><source media="(max-width: 1023px)" srcSet={asset('leftMiddle-background.svg')} /><img src={asset('leftMiddle.svg')} width="1008" height="1196" alt="" /></picture></ScrollReveal>
       <Illustration name="flowerWhiteSmall.png" width={115} height={102} className="flower flower-white-small" />
-      <Illustration name="flowerWhiteLarge.png" width={147} height={119} className="flower flower-white-large" delay={120} />
+      <Illustration name="leftFlower.svg" width={156} height={131} className="flower flower-white-large" delay={120} />
       <div className="human-copy">
         <ScrollReveal><h2 id="human-title" className="outlined-title">{human.title}</h2></ScrollReveal>
         <article className="photography">

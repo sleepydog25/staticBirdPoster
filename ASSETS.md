@@ -18,8 +18,13 @@
 | garbage.svg | 353 × 263 | 垃圾桶及垃圾袋 |
 | windowBird.svg | 353 × 263 | 窗框、裂紋與飛鳥 |
 | stickyRat.svg | 236 × 122 | 黏鼠板與老鼠 |
-| title.svg | 862 × 557 | 主標題文字輪廓與裝飾；只作參考，不與 HTML 重複顯示 |
+| title.svg | 862 × 557 | 開場組裝時出現，再淡入原有 HTML 標題，完成後隱藏 |
 | map.svg | 410 × 59 | 搜尋圖案、白色膠囊與救傷地圖文字輪廓；改用 HTML |
-| cat.svg | 542 × 811 | 橘色貓頭；未出現在參考海報的獨立構圖，保留未使用 |
+| cat.svg | 542 × 811 | 開場第二個威脅；原海報的遊蕩貓狗構圖不變 |
+| poison.svg | 177 × 172 | 新增原稿；開場中毒威脅與原海報老鼠藥插畫 |
+| leftFlower.svg | 156 × 131 | 新增原稿；開場前景與原左側主要白花位置 |
+| rightFlower.svg | 503 × 412 | 新增原稿；開場前景與原右側主要粉花位置 |
 
 衍生素材 `leftMiddle-background.svg`、`owl.svg` 只拆分原 SVG 子節點及設定取景範圍，不修改 path 或 fill。`ratPoison.png` 與五個 flower PNG 是原海報的局部擷取；周圍純色背景設為透明，用途與來源如檔名所示。
+
+新增 SVG 已取代 `ratPoison.png`、`flowerWhiteLarge.png`、`flowerPinkLarge.png` 的顯示用途；舊檔保留但不再載入。開場暫用圖片層與海報共用相同資產網址，瀏覽器可共用快取，不包含另一份海報 DOM。

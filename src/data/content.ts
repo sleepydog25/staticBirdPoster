@@ -30,7 +30,7 @@ export const content = {
     title: '人類環境中的陷阱',
     items: [
       { id: 'glue', title: '黏鼠板', asset: 'stickyRat.svg', width: 236, height: 122, description: '不要在戶外放置黏鼠板，可能黏住野生動物。若發現鳥類遭黏，請先用紙或布覆蓋黏膠，一起放入紙箱，並儘速送往野生動物救傷單位處理。' },
-      { id: 'poison', title: '老鼠藥', asset: 'ratPoison.png', width: 180, height: 170, description: '鼠藥不只會毒死老鼠，也可能沿著食物鏈，讓捕食老鼠的野生動物誤食中毒。應從環境管理著手，減少食物來源、妥善處理垃圾與廚餘，優先使用物理防治。' },
+      { id: 'poison', title: '老鼠藥', asset: 'poison.svg', width: 177, height: 172, description: '鼠藥不只會毒死老鼠，也可能沿著食物鏈，讓捕食老鼠的野生動物誤食中毒。應從環境管理著手，減少食物來源、妥善處理垃圾與廚餘，優先使用物理防治。' },
       { id: 'garbage', title: '人為垃圾', asset: 'garbage.svg', width: 353, height: 263, description: '鳥類時無法分辨塑膠繩、釣魚線、尼龍線等人為垃圾，將它們當成巢材帶回。容易纏住鳥類的腳、翅膀或頸部，使牠們無法掙脫，造成死亡。' },
       { id: 'window', title: '窗殺', asset: 'windowBird.svg', width: 353, height: 263, description: '鳥類無法辨識透明或反光的玻璃，可能將窗戶倒映的天空、樹木誤認為可以飛行的空間，因而撞上玻璃，造成骨折、內傷甚至死亡。' },
     ],
